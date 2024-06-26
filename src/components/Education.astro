@@ -1,0 +1,56 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="flex flex-col p-8 lg:p-12">
+  <div class="mx-auto max-w-7xl">
+    <h2 class="mb-8 text-white text-center text-4xl font-bold md:text-6xl">
+      Education
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="flex flex-col gap-4 text-gray-200 sticky py-2 md:order-2">
+        <h3 class="text-white text-2xl font-bold md:text-4xl">
+          Computer Science BSc
+        </h3>
+        <p class="text-xl md-text-2xl">Second Class (Upper) Honours</p>
+        <div class="flex items-center gap-3">
+          <Icon name="ri:calendar-2-fill" />
+          <span>
+            <time datetime="2014-09-01">Sept 2014</time> - <time
+              datetime="2017-06-01">June 2017</time
+            ></span
+          >
+        </div>
+        <div class="flex items-center gap-3">
+          <Icon name="ri:map-pin-2-fill" />
+          <span>Northumbria University</span>
+        </div>
+      </div>
+
+      <article
+        class="col-span-2 prose prose-xl md:prose-2xl prose-invert md:order-1"
+      >
+        <ul>
+          <li>
+            Relevant Modules: Programming, Relational Databases, Web
+            Technologies, Systems Analysis, Computing Fundamentals, Artificial
+            Intelligence, and Machine Learning.
+          </li>
+          <li>
+            Developed competence in Java, C, PHP, JavaScript, SQL, HTML, and
+            CSS.
+          </li>
+          <li>
+            Gained extensive front-end and back-end website development
+            knowledge.
+          </li>
+          <li>
+            Developed strong teamwork, project management, and on-time delivery
+            skills.
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>

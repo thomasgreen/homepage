@@ -1,16 +1,66 @@
 ---
-import ProfileImage from '../me_updated.jpeg'
+import { Image } from "astro:assets";
+import ProfileImage from "../me_updated.jpeg";
+import { Icon } from "astro-icon/components";
+const skills = [
+  "PHP",
+  "Laravel",
+  "MySQL",
+  "PostgreSQL",
+  "PHPUnit",
+  "Pest",
+  "JS (ES5 & ES6)",
+  "Vue.js",
+  "Livewire",
+  "Inertia",
+  "CSS 3",
+  "Tailwind CSS",
+  "Docker",
+  "Git",
+  "Jira",
+];
 ---
-<div class="container mx-auto flex flex-col items-center justify-center gap-16 md:flex-row md:gap-32">
-  <div class="flex max-w-xl flex-col items-start gap-8">
-    <h1 class="text-5xl font-bold text-white">Hello, I'm Tom Green</h1>
-    <p class="text-xl leading-relaxed text-white">
-      Senior Software Engineer with over 7 years experience, specializing in Laravel and Vue.
-    </p>
-    <a href="mailto:me@tomgreen.dev" class="flex w-auto gap-2 rounded-md bg-white px-4 py-2 text-gray-900 transition ease-linear hover:bg-white/80">
-      Get in touch →
-    </a>
-  </div>
-  <img src={ProfileImage.src} alt="Tom Green" class="rounded-lg max-h-96" />
-</div>
 
+<section
+  class="max-w-7xl container mx-auto flex flex-col items-center justify-center gap-16 md:flex-row md:gap-32 mt-4 pt-2 px-2 md:p-0"
+>
+  <div class="flex flex-col items-start gap-8">
+    <h1 class="text-5xl font-bold text-white">Hello, I'm Tom Green</h1>
+    <div class="flex flex-wrap gap-2">
+      {
+        skills.map((skill) => (
+          <span class="inline-flex items-center bg-slate-700 select-none text-white text-sm rounded-lg py-1.5 ps-4 pe-4">
+            {skill}
+          </span>
+        ))
+      }
+    </div>
+    <div class="flex gap-4">
+      <a
+        href="mailto:me@tomgreen.dev"
+        class="flex w-auto gap-2 rounded-md bg-white px-4 py-2 text-gray-900 transition ease-linear hover:bg-white/80 items-center"
+      >
+        Get in touch
+
+        <Icon name="ri:mail-send-fill" />
+      </a>
+      <a
+        href="/thomas_green_cv.pdf"
+        rel="noopener"
+        target="_blank"
+        class="flex w-auto gap-2 rounded-md bg-white px-4 py-2 text-gray-900 transition ease-linear hover:bg-white/80 items-center"
+      >
+        Download CV
+
+        <Icon name="ri:file-download-fill" />
+      </a>
+    </div>
+  </div>
+  <Image
+    src={ProfileImage}
+    width="400"
+    loading="eager"
+    alt="Tom Green"
+    class="rounded-lg"
+  />
+</section>
